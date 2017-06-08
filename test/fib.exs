@@ -1,5 +1,10 @@
 to_process = [ 37, 37, 37, 37, 37 ]
-nodes = [Node.self]
+
+Node.connect(:"b508@192.168.1.23")
+Node.connect(:"b207@192.168.1.24")
+Node.connect(:"b309@192.168.1.25")
+
+nodes = [Node.self | Node.list]
 
 Enum.each 1..10, fn num_processes ->
   process_nodes =
